@@ -48,6 +48,7 @@ public class UpdateServlet extends HttpServlet {
 
       em.getTransaction().begin();
       em.getTransaction().commit();
+      request.getSession().setAttribute("flush", "ID:"+t.getId()+" の更新が完了しました。");
       em.close();
 
       // 不要なtask_idをdelete
